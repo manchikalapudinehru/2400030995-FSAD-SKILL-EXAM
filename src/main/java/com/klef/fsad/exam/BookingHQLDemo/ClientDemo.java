@@ -1,5 +1,6 @@
 package com.klef.fsad.exam;
 
+import com.klef.fsad.exam.BookingHQLDemo.Booking;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -31,7 +32,7 @@ tx.commit();
 
 System.out.println("Records Inserted");
 
-Query q = session.createQuery("from Booking");
+Query<Booking> q = session.createQuery("from Booking", Booking.class);
 
 List<Booking> list = q.list();
 
